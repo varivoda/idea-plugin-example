@@ -1,12 +1,13 @@
 <idea-plugin>
-    <id>com.wrike.example.first-idea-plugin</id>
-    <name>Plugin display name here</name>
-    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+    <id>com.wrike.example.first.idea.plugin</id>
+    <name>Test </name>
+    <vendor email="support@.com" url="https://github.com/varivoda/idea-plugin-example">test company</vendor>
+    <version>1.0.0</version>
 
-    <description><![CDATA[
-    Enter short description for your plugin here.<br>
-    <em>most HTML tags may be used</em>
-    ]]></description>
+    <description>
+        Test plugin
+        https://github.com/varivoda/idea-plugin-example
+    </description>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
@@ -14,19 +15,24 @@
     <depends>com.intellij.modules.lang</depends>
     -->
 
+    <depends>com.intellij.modules.platform</depends>
+
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
     </extensions>
 
     <actions>
         <!-- Add your actions here -->
-        <action id="FirstAction" class="FirstAction" text="FirstAction">
+        <group id="Qaa.PluginMenu" text="QAA" description="QAA">
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
-        </action>
-        <action id="Remove category" class="ReplaceCategoryAction" text="Replace category">
-            <add-to-group group-id="CutCopyPasteGroup" anchor="first"/>
-        </action>
-        <action id="Replace all category" class="ReplaceAllCategoryAction" text="Replace all category">
-        </action>
+            <action id="MigrateToJunit5" class="junitmigration.MigrateToJunit5" text="Migration to Junit 5" description="Migtate to Junit5">
+            </action>
+            <action id="FirstAction" class="FirstAction" text="FirstAction">
+            </action>
+            <action id="Remove category" class="ReplaceCategoryAction" text="Replace category">
+            </action>
+            <action id="Replace all category" class="ReplaceAllCategoryAction" text="Replace all category">
+            </action>
+        </group>
     </actions>
 </idea-plugin>

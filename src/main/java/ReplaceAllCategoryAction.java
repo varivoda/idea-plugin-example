@@ -65,9 +65,7 @@ public class ReplaceAllCategoryAction extends AnAction {
                         .findAnnotation("org.junit.experimental.categories.Category");
 
         CommandProcessor.getInstance().executeCommand(project, () ->
-                ApplicationManager.getApplication().runWriteAction(() -> {
-                    oldFeature.delete();
-                }), null, null);
+                ApplicationManager.getApplication().runWriteAction(() -> oldFeature.delete()), null, null);
     }
 
     private void addTypes(PsiMethod psiMethod, List<String> techCategories) {
